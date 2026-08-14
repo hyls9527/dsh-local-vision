@@ -2,6 +2,8 @@
 
 > DSH profile bundle · v0.2.0 —— 给纯文本大模型装上「眼睛」
 
+**English**: Give text-only LLMs (e.g. deepseek-v4-flash) local vision — works with **any OpenAI-compatible local inference server** (llama.cpp, Ollama, LM Studio, vLLM/SGLang, Jan, GPT4All, llamafile…). Pure Node, no Python, fully offline.
+
 为不具备视觉能力的模型（如 deepseek-v4-flash）提供本地看图能力：**兼容所有
 OpenAI 兼容的本地推理框架**——llama.cpp、Ollama、LM Studio、vLLM/SGLang、Jan、
 GPT4All、llamafile 等。纯 Node 实现、零 Python 依赖、全程离线。
