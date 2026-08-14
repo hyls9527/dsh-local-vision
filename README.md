@@ -1,18 +1,21 @@
 # dsh-local-vision
 
-通用本地视觉桥接工具插件（DSH profile bundle，v0.2.0）。
+> DSH profile bundle · v0.2.0 —— 给纯文本大模型装上「眼睛」
 
-为纯文本模型（如 deepseek-v4-flash）提供"看图"能力，**兼容所有 OpenAI 兼容
-的本地推理框架**：llama.cpp server、Ollama、LM Studio、vLLM/SGLang、Jan、
-GPT4All、llamafile 等。纯 Node 实现，无 Python 依赖。
+为不具备视觉能力的模型（如 deepseek-v4-flash）提供本地看图能力：**兼容所有
+OpenAI 兼容的本地推理框架**——llama.cpp、Ollama、LM Studio、vLLM/SGLang、Jan、
+GPT4All、llamafile 等。纯 Node 实现、零 Python 依赖、全程离线。
+
+一句话用法：`local_vision(image="图片路径")` —— 自动选端点、自动挑视觉模型、
+直接返回图片描述。
 
 ## 功能特性
 
-- **多端点轮询**：配置多个本地推理服务，自动按序选择第一个"健康且含视觉模型"的端点
+- **多端点自动轮询**：配置多个本地推理服务，按序选用第一个「健康且含视觉模型」的端点
 - **视觉模型自动探测**：`GET /v1/models` 枚举 + 名称启发式过滤（vl/vision/llava/minicpm/internvl/glm-4v/gpt-4o 等关键词）+ Ollama 原生 `/api/tags` capabilities 增强
-- **仅视觉模型可用**：端点无视觉模型时明确报错并列出该端点全部模型
-- **模型可选**：工具参数 `model` 可显式指定；缺省自动选端点上第一个视觉模型
-- 保留 health 探测、取消信号、超时控制
+- **仅限视觉模型**：端点没有视觉模型时明确报错并列出全部模型，绝不误用纯文本模型
+- **模型参数可选**：`model` 可显式指定；缺省自动选择端点上第一个视觉模型
+- health 探测、取消信号、超时控制一应俱全
 
 # 安装到本机 profile
 
