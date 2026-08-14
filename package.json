@@ -38,8 +38,8 @@
                                                             }
                              },
     "devDependencies":  {
-                            "@deepseek-ai/cordis":  "file:<DSH_HOME>/profiles/node_modules/@deepseek-ai/cordis",
-                            "@deepseek-ai/dsh-tools":  "file:<DSH_HOME>/profiles/node_modules/@deepseek-ai/dsh-tools",
+                            "@deepseek-ai/cordis":  "^4.0.1",
+                            "@deepseek-ai/dsh-tools":  "^0.0.1-rc.1",
                             "@types/node":  "^24.0.0",
                             "esbuild":  "^0.25.0",
                             "typescript":  "^6.0.3"

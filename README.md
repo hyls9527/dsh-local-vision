@@ -14,15 +14,17 @@ GPT4All、llamafile 等。纯 Node 实现，无 Python 依赖。
 - **模型可选**：工具参数 `model` 可显式指定；缺省自动选端点上第一个视觉模型
 - 保留 health 探测、取消信号、超时控制
 
-## 安装（本机 profile）
+# 安装到本机 profile
 
 ```sh
 # 构建（需 node + npm）
 npm install && npm run build
 
-# 已通过 link 依赖装入 web profile：
-#   "dsh-local-vision": "link:<workspace>/dsh-local-vision"
-# 并在 dsh.profile.bundles 含 "dsh-local-vision"
+# 装入 profile（link 依赖）：
+#   在 ~/.dsh/profiles/web/package.json 的 dependencies 加：
+#     "dsh-local-vision": "link:<本仓库绝对路径>"
+#   并在 dsh.profile.bundles 追加 "dsh-local-vision"，然后：
+cd ~/.dsh/profiles/web && pnpm install -w
 ```
 
 ## 工具：local_vision
